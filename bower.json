@@ -1,0 +1,27 @@
+{
+  "name": "TasteBuds",
+  "homepage": "http://taste-buds.firebaseapp.com/",
+  "authors": [
+    "Avi Samloff",
+    "Vidiu Chiu",
+    "Tina Lai",
+    "Matthew Murkidjanian",
+    "Kevin Cheng"
+  ],
+  "description": "Food with friends",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.4.0"
+  }
+}
