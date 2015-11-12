@@ -1,14 +1,18 @@
 # TasteBuds #
 ### Food with friends ###
 
+***
+
 #### [Contributing Guide](CONTRIBUTING.md) | [Press Release](PRESS-RELEASE.md) | [Style Guide](STYLEGUIDE.md) ####
 
 #### Tech Stack ####
 - [PostgreSQL](http://www.postgresql.org/)
-- Bookshelf ORM
+- [Bookshelf.JS ORM](http://bookshelfjs.org/)
 - [Node.JS](http://nodejs.org/)
 - [Express](http://expressjs.com/)
 - [AngularJS](https://angularjs.org/)
+- [Yelp API](http://yelp.com/)
+- [Facebook Login](https://developers.facebook.com/docs/facebook-login)
 
 
 #### Our Team ####
