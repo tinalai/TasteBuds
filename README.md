@@ -1,7 +1,7 @@
-# ~ #
-## The place to pick a bite ##
+# TasteBuds #
+### Food with friends ###
 
-### [Contributing Guide](CONTRIBUTING.md) | [Press Release](PRESS-RELEASE.md) | [Style Guide](STYLEGUIDE.md) ###
+#### [Contributing Guide](CONTRIBUTING.md) | [Press Release](PRESS-RELEASE.md) | [Style Guide](STYLEGUIDE.md) ####
 
 #### Tech Stack ####
 - [PostgreSQL](http://www.postgresql.org/)
