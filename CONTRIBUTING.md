@@ -1,11 +1,11 @@
-# Contributing to ~
+# Contributing to TasteBuds
 
 ## General Workflow
 
 1. Fork the repo
 2. Cut a namespaced feature branch from master
   - bug/...
-  - feat/...
+  - feature/...
   - test/...
   - doc/...
   - refactor/...
@@ -30,14 +30,14 @@
 Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
 
 ```bash
-git remote add upstream https://github.com/makersquare/<NAME_OF_REPO>.git
+git remote add upstream https://github.com/<YOUR-GITHUB-USERNAME>/<NAME-OF-REPO>.git
 ```
 
 ### Cut a namespaced feature branch from master
 
 Your branch should follow this naming convention:  
   - bug/...  
-  - feat/...  
+  - feature/...  
   - test/...  
   - doc/...  
   - refactor/...  
@@ -45,14 +45,14 @@ Your branch should follow this naming convention:
 These commands will help you do this:
 
 ```bash
-git checkout -b your-branch-name
+git checkout -b <YOUR-BRANCH-NAME>
 ```
 
 ### Make commits to your feature branch.
 
 Prefix each commit like so:  
-  - (feat) Added a new feature  
-  - (fix) Fixed inconsistent tests [Fixes #0]  
+  - (feature) Adds a new feature  
+  - (fix) Fixes inconsistent tests [Fixes #0]  
   - (refactor) ...  
   - (cleanup) ...  
   - (test) ...  
@@ -106,10 +106,10 @@ Thanks for contributing!
   - Keep your code [DRY][].
   - Apply the [boy scout rule][].
   - Follow [the style guide](STYLE-GUIDE.md)
-1. Run the [tests][] before submitting a [pull request][].
-1. Tests are very, very important. Submit tests if your [pull request][] contains
+2. Run the [tests][] before submitting a [pull request][].
+3. Tests are very, very important. Submit tests if your [pull request][] contains
    new, testable behavior.
-1. Your [pull request][] is comprised of a single ([squashed][]) commit.
+4. Your [pull request][] is comprised of a single ([squashed][]) commit.
 
 **[⬆ back to top](#contributing)**
 
@@ -125,7 +125,7 @@ Thanks for contributing!
 - [ ] Did I get a code review?
  - [ ] Did I make any requested changes from that code review?
 
-If you follow all of these guidelines and make good changes, you should have
+If you follow all of these guidelines and make _good_ changes, you should have
 no problem getting your changes merged in.
 
 

@@ -1,31 +1,31 @@
-# ~ #
+# TasteBuds #
 
 
 ## Heading ##
   > Rate food at your favorite restaurant on a per-item basis, and share with your friends.
 
 ## Sub-Heading ##
-  > Enjoy eating food? Check out ~ before your next bite.
+  > Food is better when you share with friends.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > TasteBuds is the social media center for sharing food with your friends, and getting recommendations for new food.
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > Ever wanted to share your favorite food with your friends? Need somewhere to get a recommendation for a new dish to try? TasteBuds is the place for that interaction to take place.
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > TasteBuds connects you with your friends to share food, drink, and your favorite restaurants.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > "" - Tina Lai
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Login with Facebook, and start sharing your pictures with friends.
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > "The food is yummy, and now I can show all my friends!" - Irving
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Head over to [TasteBuds](http://taste-buds.firebaseapp.com/) and get munching!
 
 ###### [Back](README.md) #####
