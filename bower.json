@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "font-awesome": "fontawesome#~4.4.0",
-    "Materialize": "materialize#~0.97.2"
+    "Materialize": "materialize#~0.97.2",
+    "angular": "~1.4.7"
   }
 }
