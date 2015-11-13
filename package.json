@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/KickassKoalas/Greenfield-Project/issues"
   },
-  "homepage": "https://github.com/KickassKoalas/Greenfield-Project#readme"
+  "homepage": "https://github.com/KickassKoalas/Greenfield-Project#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
