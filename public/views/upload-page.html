@@ -1,7 +1,7 @@
 <div class="user-profile">
-
+  
   <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-
+  
  <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
 
@@ -28,12 +28,19 @@
   }
   button.comment-submit {
     border-radius: 10px;
-    margin-top: -20%;
+    /*margin-top: -95px;*/
     margin-left: 20%;
   }
   img#blah {
     max-height: 400px;
     max-width: 400px;
+  }
+  div.input-field {
+    line-height: 9px;
+  }
+  textarea.input-field {
+    line-height: 20px;
+    margin-top: 8px;
   }
 </style>
 
@@ -49,19 +56,15 @@
 
           <div class="row">
             <form class="col s12">
-              <div class="row commentbox">
+              <div class="row">
                 <div class="input-field col s12">
-                  <i class="large material-icons prefix">comment</i>
-                  <textarea id="icon_prefix2" class="materialize-textarea blue-text text-darken-2"></textarea>
-                  <label for="icon_prefix2">Comment</label>
+                  <!-- <i class="large material-icons prefix">comment</i> -->
+                  <input placeholder="placeholder" type="text" class="blue-text text-darken-2 validate">
+                  <label for="icon_prefix2">Describe dat food!</label>
                 </div>
               </div>
             </form>
           </div>
-
-
-            <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-
 
           <div class="row">
             <button class="comment-submit btn waves-effect waves-light" type="submit" name="action">Submit
@@ -94,3 +97,5 @@
     readURL(this);
   });
   </script>
+
+</div>  
