@@ -1,25 +1,21 @@
 var express = require('express');
-var db = require('./config/database');
-var yelp = require('./config/yelpSearch');
+var db = require('./config/schema');
 var http = require('http');
 var Promise = require('bluebird');
-var bodyParser = require('body-parser'); // may remove
-var session = require('express-session'); // may remove
-var nodemailer = require('nodemailer'); // may remove
-var _ = require('underscore'); // may remove
-var hogan = require('hogan'); // may remove
-var fs = require('fs');
-var transporter = nodemailer.createTransport('SMTP', {
-  auth: {
-    user: 'testingiplan@gmail.com',
-    pass: 'this is a test'
-  }
-}); // may remove
+var bodyParser = require('body-parser');
+// var session = require('express-session'); // may remove
+// var _ = require('underscore'); // may remove
 var app = express();
 
-require('./models/userModel');
+require('./models/followerModel');
+require('./models/hashtagModel');
 require('./models/postModel');
+require('./models/restaurantModel');
+require('./models/userModel');
+require('./models/wantToTryModel');
+require('./collections/followers');
 require('./collections/posts');
+require('./collections/wantToTrys');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -28,19 +24,19 @@ app.use(function(req, res, next) {
 }); // fix
 
 app.use(bodyParser.urlencoded({
-  extended: false;
+  extended: false
 }));
 
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../client'));
+app.use(express.static(__dirname + '/../public'));
 
 // required for passport
-app.use(session({
-  secret: 'anysecretisok',
-  resave: false,
-  saveUninitialized: true
-})); // session secret
+// app.use(session({
+//   secret: 'anysecretisok',
+//   resave: false,
+//   saveUninitialized: true
+// })); // session secret
 
 app.listen(process.env.PORT || 3000);
 console.log('Listening...');
