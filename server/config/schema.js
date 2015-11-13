@@ -5,7 +5,6 @@ var knex = require('knex')({
   client: 'pg',
   connection: {
     host: 'localhost',
-    host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'tasteBudsDB',
@@ -14,6 +13,7 @@ var knex = require('knex')({
 });
 
 module.exports = db = require('bookshelf')(knex);
+db.plugin('registry');
 
 var buildTable = function(name, callback) {
   return db.knex.schema.hasTable(name)
@@ -51,16 +51,21 @@ var users = buildTable('users', function(table) {
   table.increments('id').primary();
   table.string('facebook_id');
   table.string('name');
+  table.string('password').notNullable();
   table.string('profile_picture');
+  table.string('username').unique().notNullable();
 });
 
 var posts = buildTable('posts', function(table) {
   table.increments('id').primary();
+  table.integer('restaurant_id').notNullable();
+  table.integer('user_id').notNullable();
   table.boolean('eat');
   table.binary('image'); // uncertain about data type
   table.string('comment');
   table.string('location');
-  table.timestamp('posted_at');
+  table.timestamp('created_at').notNullable();
+  table.timestamp('updated_at');
 });
 
 var restaurants = buildTable('restaurants', function(table) {
@@ -89,13 +94,13 @@ var hashtags = buildTable('hashtags', function(table) {
   table.string('name');
 });
 
-var postsHashtags = buildTable('posts_hashtags', function(table) {
+var hashtagsPosts = buildTable('hashtags_posts', function(table) {
   table.increments('id').primary();
   table.integer('hashtag_id').notNullable();
   table.integer('post_id').notNullable();
 });
 
-var tables = [users, posts, restaurants, wantToTrys, followers, hashtags, postsHashtags];
+var tables = [users, posts, restaurants, wantToTrys, followers, hashtags, hashtagsPosts];
 
 Promise.all(tables)
   .then(function(tables) {
@@ -103,8 +108,7 @@ Promise.all(tables)
       if (table.created) {
         console.log('Bookshelf: created table', table.name);
       } else {
-        console.log('Bookshelf:'
-          table.name, 'table already exists');
+        console.log('Bookshelf:', table.name, 'table already exists');
       }
     });
   });
