@@ -4,6 +4,7 @@ var Promise = require('bluebird');
 require('./userModel');
 require('./hashtagModel');
 require('./restaurantModel');
+require('./wantToTryModel');
 
 var Post = db.Model.extend({
   tableName: 'posts',
@@ -16,6 +17,9 @@ var Post = db.Model.extend({
   },
   hashtags: function() {
     return this.belongsToMany('Hashtag');
+  },
+  wantToTrys: function() {
+    return this.hasMany('WantToTry');
   }
 });
 
