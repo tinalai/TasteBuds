@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 // var session = require('express-session'); // may remove
 // var _ = require('underscore'); // may remove
 var app = express();
+var postController = require('/routes/posts/postController.js');
+var bluebird = require('bluebird');
+var db = require('../config/schema.js');
 
 require('./models/followerModel');
 require('./models/followerUserModel');
@@ -32,6 +35,20 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
+// create post
+app.post('/api/post', postController.createPost;
+);
+
+// fetch all Posts
+app.get('/api/posts', postController.getAllPosts;
+);
+
+// get single post
+app.get('/api/posts/:id', postController.getOnePost;
+);
+// delete post
+app.delete('/api/posts/:id', postController.deletePost;
+);
 // required for passport
 // app.use(session({
 //   secret: 'anysecretisok',
