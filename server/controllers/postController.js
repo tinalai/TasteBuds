@@ -17,7 +17,7 @@ module.exports = {
 
   createPost: function(req, res, next) {
     db.model('Post')
-      .newPost({
+      .forge({
         {
           eat: req.body.eat,
           image: req.body.image,
@@ -25,7 +25,6 @@ module.exports = {
           location: req.body.location,
           }
       })
-      .save()
       .then(function(post) {
         res.send(post);
       })
