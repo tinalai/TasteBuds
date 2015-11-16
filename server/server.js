@@ -8,13 +8,14 @@ var bodyParser = require('body-parser');
 var app = express();
 
 require('./models/followerModel');
+require('./models/followerUserModel');
 require('./models/hashtagModel');
 require('./models/postModel');
 require('./models/restaurantModel');
 require('./models/userModel');
 require('./models/wantToTryModel');
-require('./collections/followers');
 require('./collections/posts');
+require('./collections/users');
 require('./collections/wantToTrys');
 
 app.use(function(req, res, next) {
