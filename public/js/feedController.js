@@ -1,4 +1,4 @@
-tastebuds = angular.module('tastebuds', []);
+angular.module('feed', [])
 
 .controller('feedController', function($scope, $http) {
   var postPicture = $http({
