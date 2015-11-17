@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
+
 // fetch all Posts
 app.get('/posts', postController.listPosts);
 // create post
@@ -49,6 +50,8 @@ app.post('/users', userController.createUser);
 app.get('/users/:id', userController.getUser);
 // delete user
 app.delete('/users/:id', userController.deleteUser);
+
+
 
 app.listen(process.env.PORT || 3000);
 console.log('Listening...');
