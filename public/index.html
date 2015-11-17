@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html ng-app="tastebuds">
-  <head>
-    <meta charset="utf-8">
-    <title>TasteBuds</title>
-  </head>
-  <body>
-    <h1>tastebuds</h1>
-    <h3>Welcome to TasteBuds</h3>
-  <div ng-view></div>
+<head>
+  <meta charset="utf-8">
+  <title>TasteBuds</title>
+</head>
+<body>
+  <h1>tastebuds</h1>
+  <h3>Welcome to TasteBuds</h3>
+  <div>TEST</div>
+  <a ui-sref="post">Should be able to click on this Post LINK</a>
+  <div ui-view></div>
 
-    <!-- Needed for icons -->
+  <!-- Needed for icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Loading JS scripts -->
-  <script src='/js/feedController'/>
-  <script src='/js/landingController'/>
-  <script src='/js/profileController'/>
-  <script src='/js/uploadController'/>
-  <script src='/js/module'/>
+  <script src='https://cdnjs.buttflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js'></script>
+  <script src='/public/js/feedController'></script>
+  <script src='/public/js/landingController'></script>
+  <script src='/public/js/profileController'></script>
+  <script src='/public/js/uploadController'></script>
+  <script src='/public/js/module'></script>
 
-  </body>
+</body>
 
 </html>
