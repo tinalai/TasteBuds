@@ -61,10 +61,10 @@ var posts = buildTable('posts', function(table) {
   table.integer('restaurant_id').notNullable();
   table.integer('user_id').notNullable();
   table.boolean('eat');
-  table.binary('image'); // uncertain about data type
   table.string('comment');
+  table.string('image');
   table.string('location');
-  table.timestamp('created_at').notNullable();
+  table.timestamp('created_at');
   table.timestamp('updated_at');
 });
 

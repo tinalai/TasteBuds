@@ -6,9 +6,9 @@ var bodyParser = require('body-parser');
 // var session = require('express-session'); // may remove
 // var _ = require('underscore'); // may remove
 var app = express();
-var postController = require('/routes/posts/postController.js');
+var postController = require('./routes/postController');
+var userController = require('./routes/userController');
 var bluebird = require('bluebird');
-var db = require('../config/schema.js');
 
 require('./models/followerModel');
 require('./models/followerUserModel');
@@ -35,26 +35,20 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
-// create post
-app.post('/api/post', postController.createPost;
-);
-
 // fetch all Posts
-app.get('/api/posts', postController.getAllPosts;
-);
-
+app.get('/posts', postController.listPosts);
+// create post
+app.post('/posts', postController.createPost);
 // get single post
-app.get('/api/posts/:id', postController.getOnePost;
-);
+app.get('/posts/:id', postController.showPost);
 // delete post
-app.delete('/api/posts/:id', postController.deletePost;
-);
-// required for passport
-// app.use(session({
-//   secret: 'anysecretisok',
-//   resave: false,
-//   saveUninitialized: true
-// })); // session secret
+app.delete('/posts/:id', postController.deletePost);
+// create user
+app.post('/users', userController.createUser);
+// get user
+app.get('/users/:id', userController.getUser);
+// delete user
+app.delete('/users/:id', userController.deleteUser);
 
 app.listen(process.env.PORT || 3000);
 console.log('Listening...');
