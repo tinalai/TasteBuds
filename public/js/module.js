@@ -1,1 +1,1 @@
-var tastebuds = angular.module('tastebuds', []);
+tastebuds = angular.module('tastebuds', []);
