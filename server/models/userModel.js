@@ -3,9 +3,13 @@ var Promise = require('bluebird');
 
 require('./wantToTryModel');
 require('./followerUserModel');
+require('./postModel');
 
 var User = db.Model.extend({
   tableName: 'users',
+  posts: function() {
+    return this.hasMany('Post');
+  },
   wantToTrys: function() {
     return this.hasMany('WantToTry');
   },

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var postController = require('./routes/postController');
 var userController = require('./routes/userController');
+var wantToTryController = require('./routes/wantToTryController');
 var bluebird = require('bluebird');
 
 require('./models/followerModel');
@@ -35,12 +36,14 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/../public'));
 
-// fetch all Posts
+// fetch all posts
 app.get('/posts', postController.listPosts);
 // create post
 app.post('/posts', postController.createPost);
 // get single post
 app.get('/posts/:id', postController.showPost);
+//get all posts by single user
+app.get('/posts/user/:id', postController.showPostsByUser);
 // delete post
 app.delete('/posts/:id', postController.deletePost);
 // create user
@@ -49,6 +52,14 @@ app.post('/users', userController.createUser);
 app.get('/users/:id', userController.getUser);
 // delete user
 app.delete('/users/:id', userController.deleteUser);
+// create want to try
+app.post('/want_to_trys', wantToTryController.createWantToTry);
+// delete want to try
+app.delete('want_to_trys', wantToTryController.deleteWantToTry);
+// fetch want to trys by user
+app.get('/want_to_trys/user/:id', wantToTryController.getWantToTryByUser);
+// fetch want to trys by post
+app.get('/want_to_trys/post/:id', wantToTryController.getWantToTryByUser);
 
 app.listen(process.env.PORT || 3000);
 console.log('Listening...');

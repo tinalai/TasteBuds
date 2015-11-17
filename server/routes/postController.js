@@ -3,6 +3,9 @@
 
 var Posts = require('../collections/posts');
 var Post = require('../models/postModel');
+// We require these in order to select posts by user
+var Users = require('../collections/users');
+var User = require('../models/userModel');
 
 /* In list(), we just want to show all posts along with the user who posted the
  * post. We pass the {withRelated: ['user']} argument in fetch().
@@ -63,6 +66,26 @@ exports.showPost = function(req, res) {
       res.status(200).json(resultingPost);
     }
   });
+};
+
+exports.showPostsByUser = function(req, res) {
+  User.forge({
+    id: req.params.id
+  })
+    .fetch({
+      withRelated: ['posts']
+    })
+    .then(function(user) {
+      var posts = user.related('posts');
+      res.status(200).json({
+        data: posts
+      });
+    })
+    .catch(function(error) {
+      res.status(404).json({
+        error: "An error occurred."
+      })
+    })
 };
 
 exports.deletePost = function(req, res) {
